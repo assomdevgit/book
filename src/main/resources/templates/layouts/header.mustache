@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Yes24Clone</title>
+
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, h3, p, a {
+          margin: 0;
+          padding: 0;
+        }
+        /* Basic link styles */
+        a {
+          text-decoration: none;
+          transition: color 0.3s; /* Smooth color transition on hover */
+        }
+        .navbar{
+            width: 1165px;
+            height: 195px;
+        }
+        a:hover {
+          color: #2980b9; /* Slightly darker blue color on hover */
+        }
+
+        #yHeader {
+            margin-bottom: 20px;
+            height: 195px;
+            background: url(https://image.yes24.com/sysimage/renew/gnb/bgGnbN4.png?ver=20200311) repeat-x left top;
+        }
+
+        #yHeader h1 {
+            z-index: 120000 !important;
+        }
+
+        hr {
+            display: block;
+            unicode-bidi: isolate;
+            margin-block-start: 0.5em;
+            margin-block-end: 0.5em;
+            margin-inline-start: auto;
+            margin-inline-end: auto;
+            overflow: hidden;
+            border-style: inset;
+            border-width: 1px;
+        }
+
+        #yHeader #yHeaderWrap {
+            z-index: 110000 !important;
+        }
+
+        #yHeader h1 {
+            position: relative;
+            z-index: 61;
+            margin: 0 auto;
+            width: 960px;
+        }
+
+        #yHeader h1 a.logo {
+            position: absolute;
+            left: 0;
+            top: 42px;
+        }
+
+        #yHeader #yHeaderWrap {
+            margin: 0 auto;
+            position: relative;
+            z-index: 51;
+            width: 960px;
+            text-align: left;
+        }
+        #yHeader #yHeaderWrap .yHeaderTop {
+            height: 38px;
+        }
+
+
+        #yHeader #yHeaderWrap .yHeaderMid .yesSearch {
+            position: absolute;
+            left: 200px;
+            top: 68px;
+            z-index: 4;
+            width: 516px;
+            height: 48px;
+            _width: 520px;
+            _height: 52px;
+            border: solid 2px #0080ff;
+            border-radius: 3px;
+            background-color: #fff;
+        }
+
+        #yHeader #yHeaderWrap .yHeaderMid {
+          height: 112px;
+        }
+
+        Header #yHeaderWrap .yHeaderMid .yesSearch {
+            position: absolute;
+            left: 200px;
+            top: 68px;
+            z-index: 4;
+            width: 516px;
+            height: 48px;
+            _width: 520px;
+            _height: 52px;
+            border: solid 2px #0080ff;
+            border-radius: 3px;
+            background-color: #fff;
+        }
+
+        #yHeader #yHeaderWrap .yHeaderMid .yesSearch #yesSForm .schBtn {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 60px;
+        }
+
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, form, fieldset, p, button {
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="yesWrap">
+        <div id="yesHeaderArea">
+            <div id="yHeader">
+                <h1>
+                    <a href="/books/index">
+                        <img src="https://image.yes24.com/sysimage/renew/gnb/logoN4.png" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://image.yes24.com/sysimage/renew/gnb/logoN4.svg" width="200" height="103" alt="YES24">
+                        </a>
+                </h1>
+                <div id="yHeaderWrap">
+                    <div id="yHeaderTop">
+                        <ul id="ulCategoryList"></ul>
+                    </div>
+                    <hr>
+                    <div class="yHeaderMid">
+                        <div class="yesSearch">
+                            <form class="col-2" name="yesSForm" method="get" action="/books/search">
+                                <fieldset>
+                                    <span class="schIpt">
+                                        <input class="form-control me-2" type="search" name="search" placeholder="내용을 입력하세요." aria-label="Search">
+                                    </span>
+                                    <span class="schBtn">
+                                        <button class="btn btn-outline-success" type="submit" style="white-space: nowrap; width: auto;">검색</button>
+                                    </span>
+                                    <div class="row mt-2">
+                                        <div class="col-9">
+                                            <select class="form-select" name="searchOption" id="searchOption">
+                                                <option value="Name" selected>책 제목</option>
+                                                <option value="Author">작가</option>
+                                                <option value="Publisher">출판사</option>
+                                                <option value="All">전체</option>
+                                            </select>
+                                        </div>
+                                    </div>           
+                                </fieldset>
+                            </form>    
+                        </div>  
+                    </div>
+                </div>
+                </form>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+{{#msg}}
+<div class="alert alert-primary alert-dismissible">
+    {{msg}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert"
+            aria-label="Close"></button>
+</div>
+{{/msg}}
+
+ <!-- 옵션 버튼 클릭 시 선택한 검색 옵션을 저장 -->
+<script>
+    $('.btn-group .btn').click(function () {
+        $('#searchOption').val($(this).data('option'));
+    });
+</script>

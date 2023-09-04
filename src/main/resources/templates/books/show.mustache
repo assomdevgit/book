@@ -1,0 +1,120 @@
+{{>layouts/header}}
+
+    <div><a href="https://www.yes24.com/campaign/00_Corp/2023/brandStory.aspx" target="_blank"><img src="https://image.yes24.com/dms/202305/브랜드스토리_YES24_상세_띠배너_2x.png" border="0" alt="브랜드스토리"></a></div>
+    <div class="container">
+    <table class="table" width="780">
+        <thread>
+        <tr>
+            <th scope="col" width="510"></th>
+            <th scope="col"></th>
+        </tr>
+        </thread>
+        <tbody>
+            {{#bookInfo}}
+            <tr>
+                
+                <td height="100%"><img src="https://image.yes24.com/goods/{{id}}/XL" width="100%" height="100%" border="0"></td>
+                <td>
+                    <h3>{{name}}</h3><br>
+                    <ul>
+                        <li>저자 : {{author}}</li>
+                        <li>출판사 : {{publisher}}</li>
+                        <li>발행일 : {{date}}</li>
+                        <li>평점 : {{starpoint}}</li>
+                        <li>장르 : {{genre}}</li>
+                        <li>가격 : <span class="custom-span">{{price}}</span> 원</li>
+                    </ul>
+
+                </td>
+            </tr>
+            {{/bookInfo}}
+        </tbody>
+    </table>
+
+    <div>
+        <h3>책소개</h3><br>
+        <div class="wrapped-text">
+        {{bookInfo.intro}}
+        </div>
+    </div>
+</div>
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+    <a href="/books/index" class="btn btn-primary">홈</a>
+    <!--
+    <a href="/articles/{{bookInfo.id}}/edit" class="btn btn-primary">수정</a>
+    <a href="/articles/{{bookInfo.id}}/delete" class="btn btn-danger">삭제</a>
+    -->
+    </div>
+
+
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, h3, p, a {
+          margin: 0;
+          padding: 0;
+        }
+      
+        /* Basic link styles */
+        a {
+          text-decoration: none;
+          color: #3498db; /* Bright blue color for links */
+          transition: color 0.3s; /* Smooth color transition on hover */
+        }
+      
+        a:hover {
+          color: #2980b9; /* Slightly darker blue color on hover */
+        }
+      
+        /* Set full screen size */
+        html, body {
+          height: 100%;
+          width: 100%;
+        }
+
+        /* Body font and background color */
+        body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use Segoe UI or any preferred font */
+          font-size: 18px; /* Slightly larger base font size for better readability */
+          background-color: #f2f2f2; /* Light gray background color */
+          color: #444; /* Slightly darker text color */
+          line-height: 1.6; /* Line height for better readability */
+          padding: 30px; /* Add more padding to the body */
+        }
+
+        ul {
+            list-style-type: none; /* Add bullets back for ul */
+            margin: 0; /* Reset default margin */
+            padding-left: 20px; /* Add left padding to the ul */
+          }
+        
+          li {
+            margin-bottom: 10px; /* Increase bottom margin for li */
+          }
+      
+        /* Container for content */
+        .container {
+          max-width: 1024px;
+          margin: 0 auto; /* Center the container */
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .custom-span {
+            color: #e74c3c; /* Red color */
+            font-weight: bold;
+          }
+
+        .wrapped-text {
+            white-space: normal; /* Allow automatic line wrapping */
+            max-width: 980px; /* Define a maximum width for the div */
+            border: 0px solid #ccc; /* Add a border for better visibility */
+            padding: 10px; /* Add padding to the div */
+        }
+      </style>
+
+{{>layouts/footer}}
