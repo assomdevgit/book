@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.lang.reflect.Method;
 
+import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -120,6 +121,7 @@ public class BookController {
         log.info("beginPage:::" + beginPage);
         log.info("endPage" + endPage);
         log.info("totalPage:::" + totalPage);
+        log.info("nowPage:::"+ nowPage);
 
         model.addAttribute("pageIndex", pageIndex);
         model.addAttribute("previous", previous);
