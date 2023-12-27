@@ -175,7 +175,6 @@ public class BookController {
         log.info("beginPage:::" + beginPage);
         log.info("endPage" + endPage);
         log.info("totalPage:::" + totalPage);
-        
         log.info("nowPage:::" + nowPage);
         
         model.addAttribute("pageIndex", pageIndex);
