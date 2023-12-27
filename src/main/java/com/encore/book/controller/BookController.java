@@ -174,8 +174,6 @@ public class BookController {
 
         log.info("beginPage:::" + beginPage);
         log.info("endPage" + endPage);
-        log.info("totalPage:::" + totalPage);        
-        log.info("nowPage:::"+ nowPage);
         log.info("totalPage:::" + totalPage);
         log.info("nowPage:::" + nowPage);
         
